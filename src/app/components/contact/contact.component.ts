@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, AbstractControl } from '@angular/forms';
 
 import { Title } from '../../models/title.enum';
 import { Gender } from '../../models/gender.enum';
+import { Contact } from '../../models/contact';
 
 @Component({
   selector: 'app-contact',
@@ -13,6 +14,7 @@ export class ContactComponent implements OnInit {
 
   titles: Title[];
   genders: Gender[];
+  contact: Contact;
 
   form: FormGroup;
 
@@ -31,6 +33,14 @@ export class ContactComponent implements OnInit {
     this.genders = [null, ...Object.values(Gender)] as Gender[];
 
   }
+
+  get title(): AbstractControl { return this.form.get('title'); }
+  get firstName(): AbstractControl { return this.form.get('firstName'); }
+  get middleName(): AbstractControl { return this.form.get('middleName'); }
+  get lastName(): AbstractControl { return this.form.get('lastName'); }
+  get gender(): AbstractControl { return this.form.get('gender'); }
+  get phoneNumber(): AbstractControl { return this.form.get('phoneNumber'); }
+  get email(): AbstractControl { return this.form.get('email'); }
 
   ngOnInit(): void {
   }
