@@ -1,6 +1,6 @@
 jobs:
   build_test:
-    working_directory: ~/Deezer-app
+    working_directory: ~/angular-forms
     docker:
       - image: circleci/node:12.9.1-browsers
     steps:
@@ -22,9 +22,9 @@ jobs:
       - run:
           name: Build
           command: ./node_modules/@angular/cli/bin/ng build --prod
-      # - run:
-      #     name: Firebase Deploy
-      #     command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
+      - run:
+          name: Firebase Deploy
+          command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
 
 workflows:
   version: 2
