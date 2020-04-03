@@ -42,7 +42,7 @@
             <input type="text" class="form-control" id="email" formControlName="email">
         </div>
 
-        <button type="submit" class="form-button" #submit>Submit</button>
+        <button type="submit" [disabled]="form.invalid" class="form-button" #submit>Submit</button>
 
     </form>
     

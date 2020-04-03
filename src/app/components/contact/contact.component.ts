@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, AbstractControl, Validators } from '@angular/forms';
 
 import { Title } from '../../models/title.enum';
 import { Gender } from '../../models/gender.enum';
 import { Contact } from '../../models/contact';
+
+import { PhoneNumberValidationFactory } from '../../forms/validators/phone-number-validation-factory';
 
 @Component({
   selector: 'app-contact',
@@ -20,13 +22,13 @@ export class ContactComponent implements OnInit {
 
   constructor() {
     this.form = new FormGroup({
-      title: new FormControl(''),
-      firstName: new FormControl(''),
+      title: new FormControl('', { updateOn: 'change' }),
+      firstName: new FormControl('', { validators: [Validators.required] }),
       middleName: new FormControl(''),
-      lastName: new FormControl(''),
-      phoneNumber: new FormControl(''),
-      gender: new FormControl(''),
-      email: new FormControl('')
+      lastName: new FormControl('', { validators: [Validators.required] }),
+      phoneNumber: new FormControl('', { validators: [PhoneNumberValidationFactory.localPhoneNumber, Validators.required] }),
+      gender: new FormControl('', { updateOn: 'blur' }),
+      email: new FormControl('', { validators: [Validators.email] })
     });
 
     this.titles = [null, ...Object.values(Title)] as Title[];
