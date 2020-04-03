@@ -7,7 +7,7 @@ export class PhoneNumberValidationFactory {
                 return null;
             }
             const isValid = /^\+27/.test(control.value);
-            return isValid ? null : { localPhoneNumber: true }
-        }
+            return isValid ? null : { localPhoneNumber: true };
+        };
     }
 }

@@ -12,8 +12,7 @@ import { PhoneNumberValidationFactory } from '../validators/phone-number-validat
 })
 export class LocalPhoneNumberDirective implements Validator {
   validatePhoneNumber: ValidatorFn;
-
-  constructor() { 
+  constructor() {
     this.validatePhoneNumber = PhoneNumberValidationFactory.localPhoneNumber();
   }
 
