@@ -31,6 +31,7 @@ export class ContactComponent implements OnInit {
 
     this.titles = [null, ...Object.values(Title)] as Title[];
     this.genders = [null, ...Object.values(Gender)] as Gender[];
+    this.contact = {} as Contact;
 
   }
 
