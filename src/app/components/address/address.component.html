@@ -28,19 +28,30 @@
 
         <div class="form-group">
             <label for="province">Province</label>
-            <select [(ngModel)]="address.province" class="form-control" id="province" name="province" required>
+            <select [(ngModel)]="address.province" class="form-control" id="province" name="province">
                 <option [ngValue]="null" selected="selected" hidden="hidden"></option>
                 <option *ngFor="let province of provinces" [value]="province">{{province}}</option>
-              </select>
+            </select>
         </div>
 
         <div class="form-group">
             <label for="zipCode">Postal Code<b class="text-error">*</b></label>
-            <input [(ngModel)]="address.zipCode" type="text" class="form-control" id="zipCode" name="zipCode" required #zipCode="ngModel">
+            <input [(ngModel)]="address.zipCode" appPostalCodeFourDigits type="text" class="form-control" id="zipCode" name="zipCode" required #zipCode="ngModel">
             
-            <div *ngIf="zipCode.touched && zipCode.invalid && zipCode.errors.required">
-                <span class="text-error">Postal Code is required.</span>
+            <div *ngIf="zipCode.touched && zipCode.invalid">
+                <span *ngIf="zipCode.errors.required" class="text-error">Postal Code is required.</span>
+                <span *ngIf="zipCode.errors.postalCodeFourDigits" class="text-error">Postal Codes can only contain four (4) numerical digits.</span>
             </div>
+        </div>
+
+        <div class="form-group"  *ngIf="!addressForm.valid">
+            <br>
+            <span class="text-error">All fields marked with an asterik (*) are required.</span>
+        </div>
+
+        <div class="form-group"*ngIf="zipCode.errors">
+            <br>
+            <span class="text-error">The form contains errors.</span>
         </div>
 
         <button type="submit" [disabled]="!addressForm.valid" class="form-button" #submit>Submit</button>
