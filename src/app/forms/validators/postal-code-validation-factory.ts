@@ -9,6 +9,6 @@ export class PostalCodeValidationFactory {
 
             const isValid = /^[0-9]{4}$/.test(control.value);
             return isValid ? null : { postalCodeFourDigits: true };
-        }
-    };
+        };
+    }
 }
