@@ -5,10 +5,12 @@
         
         <div class="form-group">
             <label for="line1">Address Line 1<b class="text-error">*</b></label>
-            <input [(ngModel)]="address.line1" type="text" class="form-control" id="line1" name="line1" required #line1="ngModel">
+            <input [(ngModel)]="address.line1" appStreetValidation type="text" class="form-control" id="line1" name="line1" required #line1="ngModel">
             
-            <div *ngIf="line1.touched && line1.invalid && line1.errors.required">
-                <span class="text-error">Address Line 1 is required.</span>
+            <div *ngIf="line1.touched && line1.invalid">
+                <span *ngIf="line1.errors.required" class="text-error">Address Line 1 is required.</span>
+                <span *ngIf="line1.errors.validStreet" class="text-error">Address line 1 should contain st, street, ave, avenue, lane, laan, ln to be a valid street address.</span>
+
             </div>
         </div>
 
@@ -49,7 +51,7 @@
             <span class="text-error">All fields marked with an asterik (*) are required.</span>
         </div>
 
-        <div class="form-group"*ngIf="zipCode.errors">
+        <div class="form-group"*ngIf="zipCode.errors || line1.errors">
             <br>
             <span class="text-error">The form contains errors.</span>
         </div>
