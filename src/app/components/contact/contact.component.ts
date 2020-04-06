@@ -35,7 +35,7 @@ export class ContactComponent implements OnInit {
         ]
       }),
       gender: new FormControl('', { updateOn: 'blur' }),
-      email: new FormControl('', { validators: [Validators.email] })
+      email: new FormControl('', { validators: [Validators.email, Validators.required] })
     });
 
     this.titles = [null, ...Object.values(Title)] as Title[];
