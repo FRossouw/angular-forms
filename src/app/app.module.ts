@@ -14,6 +14,7 @@ import { AddressComponent } from './components/address/address.component';
 import { LocalPhoneNumberDirective } from './forms/directives/local-phone-number.directive';
 import { PostalCodeFourDigitsDirective } from './forms/directives/postal-code-four-digits.directive';
 import { StreetValidationDirective } from './forms/directives/street-validation.directive';
+import { PhoneNumberLengthDirective } from './forms/directives/phone-number-length.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { StreetValidationDirective } from './forms/directives/street-validation.
     LocalPhoneNumberDirective,
     AddressComponent,
     PostalCodeFourDigitsDirective,
-    StreetValidationDirective
+    StreetValidationDirective,
+    PhoneNumberLengthDirective
   ],
   imports: [
     BrowserModule,
