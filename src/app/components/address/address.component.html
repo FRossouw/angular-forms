@@ -1,0 +1,60 @@
+<div class="main-form-container">
+    <h1>Address Information</h1>
+    <p>This is a form created using Angular Template Driven forms.</p>
+
+    <form class="form-container" #addressForm="ngForm" (ngSubmit)="displayAddress()">
+        
+        <div class="form-group">
+            <label for="line1">Address Line 1<b class="text-error">*</b></label>
+            <input [(ngModel)]="address.line1" appStreetValidation type="text" class="form-control" id="line1" name="line1" required #line1="ngModel">
+            
+            <div *ngIf="line1.touched && line1.invalid">
+                <span *ngIf="line1.errors.required" class="text-error">Address Line 1 is required.</span>
+                <span *ngIf="line1.errors.validStreet" class="text-error">Address line 1 should contain st, street, ave, avenue, lane, laan, ln to be a valid street address.</span>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="line2">Address Line 2</label>
+            <input [(ngModel)]="address.line2" type="text" class="form-control" id="line2" name="line2" #line2="ngModel">
+        </div>
+
+        <div class="form-group">
+            <label for="city">City<b class="text-error">*</b></label>
+            <input [(ngModel)]="address.city" type="text" class="form-control" id="city" name="city" required #city="ngModel">
+            
+            <div *ngIf="city.touched && city.invalid && city.errors.required">
+                <span class="text-error">City is required.</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="province">Province</label>
+            <select [(ngModel)]="address.province" class="form-control" id="province" name="province">
+                <option [ngValue]="null" selected="selected" hidden="hidden"></option>
+                <option *ngFor="let province of provinces" [value]="province">{{province}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="zipCode">Postal Code<b class="text-error">*</b></label>
+            <input [(ngModel)]="address.zipCode" appPostalCodeFourDigits type="text" class="form-control" id="zipCode" name="zipCode" required #zipCode="ngModel">
+            
+            <div *ngIf="zipCode.touched && zipCode.invalid">
+                <span *ngIf="zipCode.errors.required" class="text-error">Postal Code is required.</span>
+                <span *ngIf="zipCode.errors.postalCodeFourDigits" class="text-error">Postal Codes can only contain four (4) numerical digits.</span>
+            </div>
+        </div>
+
+        <div class="form-group"  *ngIf="!addressForm.valid">
+            <br>
+            <span class="text-error">All fields marked with an asterik (*) are required.</span>
+        </div>
+
+        <button type="submit" [disabled]="!addressForm.valid" class="form-button" #submit>Submit</button>
+        <button type="submit" class="form-button" routerLink="/contact">Navigate to Contact</button>
+
+    </form>
+
+</div>
