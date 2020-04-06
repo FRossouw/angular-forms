@@ -24,6 +24,11 @@ $form-input-error: red;
                 border: 1px solid $form-input-error;
             }
         }
+
+        .form-button {
+            margin-bottom: 10px;
+        }
+
     } 
     
     .text-error {

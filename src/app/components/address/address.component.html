@@ -1,5 +1,6 @@
 <div class="main-form-container">
     <h1>Address Information</h1>
+    <p>This is a form created using Angular Template Driven forms.</p>
 
     <form class="form-container" #addressForm="ngForm" (ngSubmit)="displayAddress()">
         
@@ -51,12 +52,8 @@
             <span class="text-error">All fields marked with an asterik (*) are required.</span>
         </div>
 
-        <div class="form-group"*ngIf="zipCode.errors || line1.errors">
-            <br>
-            <span class="text-error">The form contains errors.</span>
-        </div>
-
         <button type="submit" [disabled]="!addressForm.valid" class="form-button" #submit>Submit</button>
+        <button type="submit" class="form-button" routerLink="/contact">Navigate to Contact</button>
 
     </form>
 
