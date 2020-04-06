@@ -10,13 +10,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ContactComponent } from './components/contact/contact.component';
 import { LocalPhoneNumberDirective } from './forms/directives/local-phone-number.directive';
 import { AddressComponent } from './components/address/address.component';
+import { PostalCodeFourDigitsDirective } from './forms/directives/postal-code-four-digits.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactComponent,
     LocalPhoneNumberDirective,
-    AddressComponent
+    AddressComponent,
+    PostalCodeFourDigitsDirective
   ],
   imports: [
     BrowserModule,
