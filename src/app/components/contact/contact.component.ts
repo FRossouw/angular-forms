@@ -6,6 +6,7 @@ import { Gender } from '../../models/gender.enum';
 import { Contact } from '../../models/contact';
 
 import { PhoneNumberValidationFactory } from '../../forms/validators/phone-number-validation-factory';
+import { PhoneNumerLengthValidationFactory } from 'src/app/forms/validators/phone-numer-length-validation-factory';
 
 @Component({
   selector: 'app-contact',
@@ -26,7 +27,7 @@ export class ContactComponent implements OnInit {
       firstName: new FormControl('', { validators: [Validators.required] }),
       middleName: new FormControl(''),
       lastName: new FormControl('', { validators: [Validators.required] }),
-      phoneNumber: new FormControl('', { validators: [PhoneNumberValidationFactory.localPhoneNumber, Validators.required] }),
+      phoneNumber: new FormControl('', { validators: [PhoneNumberValidationFactory.localPhoneNumber, PhoneNumerLengthValidationFactory.phoneNumberLength, Validators.required] }),
       gender: new FormControl('', { updateOn: 'blur' }),
       email: new FormControl('', { validators: [Validators.email] })
     });
