@@ -5,15 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ContactComponent } from './components/contact/contact.component';
+import { LocalPhoneNumberDirective } from './forms/directives/local-phone-number.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContactComponent,
+    LocalPhoneNumberDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

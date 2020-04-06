@@ -1,0 +1,27 @@
+@import '../../../styles.scss';
+
+#contact-form-container {
+    background-color: $form-base;
+    width: 265px;
+    padding: 10px 20px;
+    margin: auto;
+    
+    .form-container {
+        display: grid;
+        grid-template-columns: auto;
+        font-size: 1rem;
+    
+        .form-group {
+            margin-bottom: 10px;
+    
+            .form-control {
+                width: 100%;
+                padding: 2px;
+            }
+
+            .ng-invalid:not(form) {
+                border: 1px solid $form-input-error;
+            }
+        }
+    }   
+}
