@@ -1,1 +1,50 @@
-<p>address works!</p>
+<div class="main-form-container">
+    <h1>Address Information</h1>
+
+    <form class="form-container" #addressForm="ngForm" (ngSubmit)="displayAddress()">
+        
+        <div class="form-group">
+            <label for="line1">Address Line 1<b class="text-error">*</b></label>
+            <input [(ngModel)]="address.line1" type="text" class="form-control" id="line1" name="line1" required #line1="ngModel">
+            
+            <div *ngIf="line1.touched && line1.invalid && line1.errors.required">
+                <span class="text-error">Address Line 1 is required.</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="line2">Address Line 2</label>
+            <input [(ngModel)]="address.line2" type="text" class="form-control" id="line2" name="line2" #line2="ngModel">
+        </div>
+
+        <div class="form-group">
+            <label for="city">City<b class="text-error">*</b></label>
+            <input [(ngModel)]="address.city" type="text" class="form-control" id="city" name="city" required #city="ngModel">
+            
+            <div *ngIf="city.touched && city.invalid && city.errors.required">
+                <span class="text-error">City is required.</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="province">Province</label>
+            <select [(ngModel)]="address.province" class="form-control" id="province" name="province" required>
+                <option [ngValue]="null" selected="selected" hidden="hidden"></option>
+                <option *ngFor="let province of provinces" [value]="province">{{province}}</option>
+              </select>
+        </div>
+
+        <div class="form-group">
+            <label for="zipCode">Postal Code<b class="text-error">*</b></label>
+            <input [(ngModel)]="address.zipCode" type="text" class="form-control" id="zipCode" name="zipCode" required #zipCode="ngModel">
+            
+            <div *ngIf="zipCode.touched && zipCode.invalid && zipCode.errors.required">
+                <span class="text-error">Postal Code is required.</span>
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="!addressForm.valid" class="form-button" #submit>Submit</button>
+
+    </form>
+
+</div>
