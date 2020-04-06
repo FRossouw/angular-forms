@@ -43,11 +43,11 @@
 
         <div class="form-group" [formGroup]="form">
             <label for="phoneNumber">Phone Number<b class="text-error">*</b></label>
-            <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber">
+            <input type="text" class="form-control" id="phoneNumber" appLocalPhoneNumber formControlName="phoneNumber">
 
             <div *ngIf="phoneNumber.touched && phoneNumber.invalid">
                 <span *ngIf="phoneNumber.errors.required" class="text-error">Phone number is required.</span>
-                <span *ngIf="phoneNumber.errors.localPhoneNumber" class="text-error">Locale code invalid.</span>
+                <span *ngIf="phoneNumber.errors.localPhoneNumber" class="text-error">Phone number code invalid, only SA codes accepted.</span>
             </div>
         </div>
 
