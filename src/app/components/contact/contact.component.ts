@@ -27,7 +27,13 @@ export class ContactComponent implements OnInit {
       firstName: new FormControl('', { validators: [Validators.required] }),
       middleName: new FormControl(''),
       lastName: new FormControl('', { validators: [Validators.required] }),
-      phoneNumber: new FormControl('', { validators: [PhoneNumberValidationFactory.localPhoneNumber, PhoneNumerLengthValidationFactory.phoneNumberLength, Validators.required] }),
+      phoneNumber: new FormControl('', { 
+        validators: [
+          PhoneNumberValidationFactory.localPhoneNumber, 
+          PhoneNumerLengthValidationFactory.phoneNumberLength, 
+          Validators.required
+        ] 
+      }),
       gender: new FormControl('', { updateOn: 'blur' }),
       email: new FormControl('', { validators: [Validators.email] })
     });
