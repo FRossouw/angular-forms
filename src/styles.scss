@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+$form-base: #f0efef;
+$form-input-error: red;
+
+.main-form-container {
+    background-color: $form-base;
+    width: 265px;
+    padding: 10px 20px;
+    margin: auto;
+    
+    .form-container {
+        display: grid;
+        grid-template-columns: auto;
+        font-size: 1rem;
+    
+        .form-group {
+            margin-bottom: 10px;
+    
+            .form-control {
+                width: 100%;
+                padding: 2px;
+            }
+
+            .ng-invalid:not(form) {
+                border: 1px solid $form-input-error;
+            }
+        }
+
+        .form-button {
+            margin-bottom: 10px;
+        }
+
+    } 
+    
+    .text-error {
+        color: $form-input-error;
+        font-style: italic;
+        font-style: 0.8rem;
+    }
+}
