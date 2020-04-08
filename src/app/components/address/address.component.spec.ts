@@ -25,7 +25,7 @@ describe('AddressComponent', () => {
       city: 'Pretoria',
       province: 'Gauteng' as Province,
       zipCode: '0017',
-    };
+    } as Address;
 
     fixture = TestBed.createComponent(AddressComponent);
     component = fixture.componentInstance;
@@ -35,6 +35,5 @@ describe('AddressComponent', () => {
   it('should create the component', () => {
     expect(component).toBeTruthy();
   });
-
 
 });
