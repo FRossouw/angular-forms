@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ContactComponent } from './contact.component';
 
 describe('ContactComponent', () => {
@@ -8,9 +7,9 @@ describe('ContactComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactComponent ]
+      declarations: [ContactComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,4 +21,16 @@ describe('ContactComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should check local phone number empty validity', () => {
+    let phone = component.form.controls.phoneNumber;
+    expect(phone.valid).toBeFalsy();
+  });
+
+  it('should check local phone number text validity', () => {
+    let phone = component.form.controls.phoneNumber;
+    phone.setValue('+27767787788');
+    expect(phone.valid).toBeTruthy();
+  });
+
 });
