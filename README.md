@@ -40,10 +40,10 @@ The project should:
 ### Form Details:
 This will be an address form handling all address related data/information and validation.
 
-![](https://raw.githubusercontent.com/FRossouw/angular-forms/bug-fixes/screenshots/address-form-1.PNG)
-![](https://raw.githubusercontent.com/FRossouw/angular-forms/bug-fixes/screenshots/address-form-2.PNG)
-![](https://raw.githubusercontent.com/FRossouw/angular-forms/bug-fixes/screenshots/address-form-3.PNG)
-![](https://raw.githubusercontent.com/FRossouw/angular-forms/bug-fixes/screenshots/address-form-4.PNG)
+![](https://raw.githubusercontent.com/FRossouw/angular-forms/development/screenshots/address-form-1.PNG)
+![](https://raw.githubusercontent.com/FRossouw/angular-forms/development/screenshots/address-form-2.PNG)
+![](https://raw.githubusercontent.com/FRossouw/angular-forms/development/screenshots/address-form-3.PNG)
+![](https://raw.githubusercontent.com/FRossouw/angular-forms/development/screenshots/address-form-4.PNG)
 
 ## **Angular Reactive Form**
 ---
@@ -51,10 +51,10 @@ This will be an address form handling all address related data/information and v
 ### Form Details:
 This will be a customer form handling all customer/person related data/information and validation.
 
-![](https://raw.githubusercontent.com/FRossouw/angular-forms/bug-fixes/screenshots/contact-form-1.PNG)
-![](https://raw.githubusercontent.com/FRossouw/angular-forms/bug-fixes/screenshots/contact-form-2.PNG)
-![](https://raw.githubusercontent.com/FRossouw/angular-forms/bug-fixes/screenshots/contact-form-3.PNG)
-![](https://raw.githubusercontent.com/FRossouw/angular-forms/bug-fixes/screenshots/contact-form-4.PNG)
+![](https://raw.githubusercontent.com/FRossouw/angular-forms/development/screenshots/contact-form-1.PNG)
+![](https://raw.githubusercontent.com/FRossouw/angular-forms/development/screenshots/contact-form-2.PNG)
+![](https://raw.githubusercontent.com/FRossouw/angular-forms/development/screenshots/contact-form-3.PNG)
+![](https://raw.githubusercontent.com/FRossouw/angular-forms/development/screenshots/contact-form-4.PNG)
 
 ## **Custom Validators**
 ---
