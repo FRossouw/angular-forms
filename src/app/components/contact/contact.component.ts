@@ -63,7 +63,8 @@ export class ContactComponent implements OnInit {
   }
 
   displayContact(): void {
-    alert(JSON.stringify(this.contact));
+    console.log(this.form.value);
+    //console.log(JSON.stringify(this.contact));
   }
 
 }
