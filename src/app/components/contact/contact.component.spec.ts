@@ -6,10 +6,14 @@ import { By } from '@angular/platform-browser';
 describe('ContactComponent', () => {
   let component: ContactComponent;
   let fixture: ComponentFixture<ContactComponent>;
-  let de: DebugElement;
-  let el: HTMLElement;
 
-  let title, firstName, middleName, lastName, gender, phone, email;
+  let title;
+  let firstName;
+  let middleName;
+  let lastName;
+  let gender;
+  let phone;
+  let email;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -75,7 +79,7 @@ describe('ContactComponent', () => {
   it('should call the displayContact method', () => {
     spyOn(component, 'displayContact');
 
-    let button = fixture.debugElement.nativeElement.querySelector('button');
+    const button = fixture.debugElement.nativeElement.querySelector('button');
     button.click();
 
     fixture.whenStable().then(() => {
