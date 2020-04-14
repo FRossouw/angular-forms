@@ -47,8 +47,8 @@
 
             <div *ngIf="phoneNumber.touched && phoneNumber.invalid">
                 <span *ngIf="phoneNumber.errors.required" class="text-error">Phone number is required.</span>
-                <span *ngIf="phoneNumber.errors.localPhoneNumber" class="text-error">Phone number code invalid, only SA codes accepted.<br></span>
-                <span *ngIf="phoneNumber.errors.phoneNumberLength" class="text-error">Phone numbers are +27 and nine digits</span>
+                <span *ngIf="phoneNumber.errors.localPhoneNumber" class="text-error">Only SA phone codes accepted.<br></span>
+                <span *ngIf="phoneNumber.errors.phoneNumberLength" class="text-error">Phone numbers are nine digits long.</span>
             </div>
         </div>
 
@@ -57,7 +57,7 @@
             <input type="text" class="form-control" id="email" formControlName="email">
 
             <div *ngIf="email.touched && email.invalid">
-                <span class="text-error">A valid email address is required.</span>
+                <span class="text-error">Email address is required.</span>
             </div>
         </div>
 
